@@ -1,0 +1,10 @@
+:root{
+    --primary-color: #078ED0;
+    --secondary-color: #FFFFFF;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+

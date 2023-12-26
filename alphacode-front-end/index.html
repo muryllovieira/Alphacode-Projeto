@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="./js/index.js" defer type="module"></script>
+    <script src="./js/main.js" defer type="module"></script>
+</head>
+
+<body>
+    <div class="container-header">
+        <img src="assets/logo_alphacode.png" alt="">
+        <h1 class="title-contact__registration">Cadastro de Contatos</h1>
+    </div>
+    <div class="container-body">
+        <form>
+            <div class="container-input">
+                <label for="nomeCompleto" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nomeCompleto" placeholder="Ex: Leticia Pacheco dos Santos">
+            </div>
+            <div class="container-input">
+                <label for="dataNascimento" class="form-label">Data de nascimento</label>
+                <input type="date" class="form-control" id="dataNascimento">
+            </div>
+            <div class="container-input">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Ex: leticia@gmail.com">
+            </div>
+            <div class="container-input">
+                <label for="profissao" class="form-label">Profissão</label>
+                <input type="text" class="form-control" id="profissao" placeholder="Ex: Desenvolvedora Web">
+            </div>
+            <div class="container-input">
+                <label for="telefone" class="form-label">Telefone para contato</label>
+                <input type="text" class="form-control" id="telefone" placeholder="Ex: (11) 4033-2019">
+            </div>
+
+            <div class="container-input">
+                <label for="celular" class="form-label">Celular para contato</label>
+                <input type="text" class="form-control" id="celular" placeholder="Ex: (11) 98493-2039">
+            </div>
+        </form>
+
+        <div class="container-checkbox">
+            <div class="container-input form-check">
+                <input type="checkbox" class="form-check-input" id="whatsapp">
+                <label class="form-check-label" for="sms">Número de celular possui Whatsapp</label>
+            </div>
+
+            <div class="container-input form-check">
+                <input type="checkbox" class="form-check-input" id="sms-notificacao">
+                <label class="form-check-label" for="emailNotificacao">Enviar notificações por SMS</label>
+            </div>
+
+            <div class="container-input form-check">
+                <input type="checkbox" class="form-check-input" id="email-notificacao">
+                <label class="form-check-label" for="emailNotificacao">Enviar notificações por E-mail</label>
+            </div>
+        </div>
+        <div class="container-button">
+            <button type="submit" class="btn btn-cadastrar" id="btn-cadastrar">Cadastrar contato</button>
+        </div>
+
+
+        <!-- Modal Deletar -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Usuário</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Deseja realmente deletar o contato?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="button-deletar" type="button" class="btn btn-primary">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar contato</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-modal">
+
+                            <div class="container-input-modal">
+                                <input type="text" id="name-edit" required class="container-input__input"
+                                    placeholder="Ex.: Letícia Pacheco dos Santos">
+                                <label for="nome">Nome</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="date" id="dateOfBirth-edit" required class="container-input__input"
+                                    placeholder="Ex.: 03/10/2003">
+                                <label for="data_nascimento">Data de nascimento</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="email" id="email-edit" required class="container-input__input"
+                                    placeholder="Ex.: leticia@gmail.com">
+                                <label for="email">E-mail</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="profession-edit" required class="container-input__input"
+                                    placeholder="Ex.: Desenvolvedora Web">
+                                <label for="profissão">Profissão</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="telephone-edit" required class="container-input__input"
+                                    placeholder="Ex.: (11) 4033-2019">
+                                <label for="telefone">Telefone para contato</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="cellphone-edit" required class="container-input__input"
+                                    placeholder="Ex.: (11) 98493-2039">
+                                <label for="celular">Celular para contato</label>
+                            </div>
+
+                        </form>
+
+                        <div class="container-checkbox-modal">
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-whatsapp-edit">
+                                <span>Número de celular possui Whatsapp</span>
+                            </div>
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-email-edit">
+                                <span>Enviar notificações por E-mail</span>
+                            </div>
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-sms-edit">
+                                <span>Enviar notificações por SMS</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="buttonEditModal" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="table-contacts">
+        <table class="container-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de nascimento</th>
+                    <th>E-mail</th>
+                    <th>Celular para contato</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>Letícia Pacheco</td>
+                    <td>03/10/2003</td>
+                    <td>leticia@gmail.com</td>
+                    <td>(11) 98493-2039</td>
+                    <td>
+                        <img src="./assets/editar.png" alt="">
+                        <img src="./assets/excluir.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Letícia Pacheco</td>
+                    <td>03/10/2003</td>
+                    <td>leticia@gmail.com</td>
+                    <td>(11) 98493-2039</td>
+                    <td>
+                        <img src="./assets/editar.png" alt="">
+                        <img src="./assets/excluir.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Letícia Pacheco</td>
+                    <td>03/10/2003</td>
+                    <td>leticia@gmail.com</td>
+                    <td>(11) 98493-2039</td>
+                    <td>
+                        <img src="./assets/editar.png" alt="">
+                        <img src="./assets/excluir.png" alt="">
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<footer>
+    <span>Termos | Políticas</span>
+    <div class="footer-text-image">
+        <span class="footer-text text-light">© Copyright 2022 | Desenvolvido por</span>
+        <img class="footer-image" src="./assets/logo_rodape_alphacode.png" alt="Logotipo da empresa Alphacode">
+    </div>
+    <span class="text-light">© Alphacode IT Solutions 2022</span>
+</footer>
+
+</html>

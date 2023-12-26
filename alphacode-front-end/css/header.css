@@ -1,0 +1,11 @@
+.container-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    background-color: var(--primary-color);
+}
+
+.title-contact__registration{
+    color: var(--secondary-color);
+}

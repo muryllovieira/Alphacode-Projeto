@@ -1,0 +1,23 @@
+footer{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 120px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.footer-text-image{
+    display: flex;
+    align-items: center;
+}
+
+.footer-text-image img{
+    width: 150px;
+
+}
+

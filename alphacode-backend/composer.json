@@ -1,0 +1,17 @@
+{
+    "name": "user/alphacode-back-end",
+    "autoload": {
+        "psr-4": {
+            "User\\AlphacodeBackEnd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "muryllovieira",
+            "email": "muryllovieira59@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "3.*"
+    }
+}
