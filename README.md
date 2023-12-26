@@ -42,8 +42,8 @@ CREATE TABLE tbl_usuario(
 ```javascript
 const SERVER = 'localhost';
 const USER = 'root';
-const PASSWORD = '78321875';
-const DATABASE = 'db_alphacode';
+const PASSWORD = '15022005';
+const DATABASE = 'alphacode_db';
 ```
 
 - 5º Abra o XAMPP e inicie o Apache.
