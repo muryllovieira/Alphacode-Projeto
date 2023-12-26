@@ -14,18 +14,18 @@ CREATE DATABASE alphacode_db;
 USE alphacode_db;
 
 CREATE TABLE tbl_usuario(
-	id int not null auto_increment primary key,
-	nome varchar(100) not null,
-	email varchar(100) not null,
-	telefone varchar(100) not null,
-	data_nascimento date not null,
+    id int not null auto_increment primary key,
+    nome varchar(100) not null,
+    email varchar(100) not null,
+    telefone varchar(100) not null,
+    data_nascimento date not null,
     profissao varchar(100) not null,
     celular varchar(100) not null,
     whatsapp boolean not null,
     notificacao_sms boolean not null,
     notificacao_email boolean not null,
 		
-	unique index(id)
+    unique index(id)
 );
 
 ```
