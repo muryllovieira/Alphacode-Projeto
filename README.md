@@ -50,8 +50,7 @@ const DATABASE = 'db_alphacode';
 - 6º Abra o projeto front-end no editor de texto e execute o index.html com o Live Server.
 
 Abaixo esta um vídeo explicativo sobre como realizar todas essas etapas.
-
-
+[Clique aqui](https://drive.google.com/drive/folders/1YdeCCP9BnMlCzFhdklsATCMydBiR3l0k)
 ---
 ## Tecnologias Utilizadas
 
@@ -78,4 +77,5 @@ Foi utilizado o Postman para fazer os testes de cada endpoint da API.
 ## Aplicação Funcionando
 
 Video da aplicação funcionando.
+[Clique aqui](https://drive.google.com/drive/folders/1evRBlb1akQqwqq1f0l3uzqwetYncnehB)
 
