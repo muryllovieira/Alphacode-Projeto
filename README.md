@@ -50,7 +50,9 @@ const DATABASE = 'db_alphacode';
 - 6º Abra o projeto front-end no editor de texto e execute o index.html com o Live Server.
 
 Abaixo esta um vídeo explicativo sobre como realizar todas essas etapas.
+
 [Clique aqui](https://drive.google.com/drive/folders/1YdeCCP9BnMlCzFhdklsATCMydBiR3l0k)
+
 ---
 ## Tecnologias Utilizadas
 
